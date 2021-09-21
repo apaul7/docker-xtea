@@ -93,4 +93,9 @@ RUN conda config --add channels r && \
     conda config --add channels bioconda && \
     conda create -n xtea xtea=${XTEA_VERSION}
 
+# entrypoint is the wrapper scipt to add conda env to path
+WORKDIR /usr/local/bin/
+COPY entrypoint .
+RUN chmod 777 entrypoint
 WORKDIR /
+ENTRYPOINT ["/usr/local/bin/entrypoint"]

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Exit on any error
+set -e
+
+export PATH="/miniconda3/envs/xtea/bin/:${PATH}"
+
+# Run command
+"$@"
