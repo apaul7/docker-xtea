@@ -88,10 +88,10 @@ RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh &
     rm Miniconda3-latest-Linux-x86_64.sh
 ENV PATH=/miniconda3/bin:${PATH}
 
-ENV XTEA_VERSION="0.1.7"
+ENV XTEA_VERSION="0.1.9"
 RUN conda config --add channels r && \
     conda config --add channels bioconda && \
-    conda create -n xtea xtea=${XTEA_VERSION}
+    conda create -n xtea xtea=${XTEA_VERSION} -y
 
 # entrypoint is the wrapper scipt to add conda env to path
 WORKDIR /usr/local/bin/
